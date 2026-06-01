@@ -25,7 +25,7 @@ export const heroSlideType = defineType({
   ],
   preview: {
     select: { title: 'title', media: 'image', order: 'order' },
-    prepare({ title, media, order }: { title?: string; media?: unknown; order?: number }) {
+    prepare({ title, media, order }: { title?: string; media?: string; order?: number }) {
       return { title: title || `Slajd ${order ?? ''}`, media }
     },
   },

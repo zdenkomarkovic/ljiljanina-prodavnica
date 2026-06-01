@@ -1,0 +1,54 @@
+@import "tailwindcss" layer(tailwind-base);
+
+@theme {
+  /* Paleta boja */
+  --color-blush:     #C4928A;
+  --color-blush-50:  #FAF3F2;
+  --color-blush-100: #F3E3E1;
+  --color-blush-200: #E8C9C4;
+  --color-blush-700: #A07068;
+
+  --color-cream:    #FBF8F6;
+  --color-warm-50:  #F7F3F1;
+  --color-warm-100: #EDE6E2;
+  --color-warm-200: #DED4CF;
+  --color-warm-300: #C9B8B2;
+  --color-warm-500: #9C8880;
+  --color-warm-700: #5C4A44;
+  --color-warm-900: #2C2420;
+
+  /* Fontovi */
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans:  "DM Sans", system-ui, sans-serif;
+}
+
+/* Baza */
+body {
+  background-color: var(--color-cream);
+  color: var(--color-warm-900);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Blush utility klase */
+.bg-blush            { background-color: #C4928A; }
+.text-blush          { color: #C4928A; }
+.border-blush        { border-color: #C4928A; }
+.bg-blush-50         { background-color: #FAF3F2; }
+.bg-blush-700        { background-color: #A07068; }
+.text-blush-700      { color: #A07068; }
+
+.hover\:bg-blush:hover       { background-color: #C4928A; }
+.hover\:bg-blush-700:hover   { background-color: #A07068; }
+.hover\:text-blush:hover     { color: #C4928A; }
+.hover\:border-blush:hover   { border-color: #C4928A; }
+.focus\:border-blush:focus   { border-color: #C4928A; }
+
+/* Hero loop animacija */
+@keyframes hero-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

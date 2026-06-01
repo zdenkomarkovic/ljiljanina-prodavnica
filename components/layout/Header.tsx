@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { getAllCategories } from '@/lib/sanity/queries'
 import CartIcon from './CartIcon'
 import CategoryDropdown from './CategoryDropdown'
+import MobileMenu from './MobileMenu'
 
 export default async function Header() {
   const categories = await getAllCategories()
@@ -37,7 +38,10 @@ export default async function Header() {
           </a>
         </nav>
 
-        <CartIcon />
+        <div className="flex items-center gap-4">
+          <CartIcon />
+          <MobileMenu categories={categories} />
+        </div>
       </div>
     </header>
   )

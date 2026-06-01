@@ -11,7 +11,7 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
   const duration = `${valid.length * 6}s`
 
   return (
-    <div className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-100">
+    <div className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-cream">
 
       {/* Scrolling traka */}
       <div

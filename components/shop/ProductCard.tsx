@@ -1,17 +1,14 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { useCart } from '@/lib/cart/CartContext'
 import { urlFor } from '@/lib/sanity/image'
 import type { Product } from '@/types/shop'
 
+const INSTAGRAM_DM_URL = 'https://ig.me/m/ljiljanina_chogan.prodavnica'
+
 export default function ProductCard({ product }: { product: Product }) {
-  const { addItem } = useCart()
   const image = product.images?.[0]
   const price = product.salePrice ?? product.price
   const hasPrice = price != null
-  const canAddToCart = product.inStock && hasPrice
 
   return (
     <div className="group border border-warm-200 rounded-2xl overflow-hidden flex flex-col bg-white hover:shadow-md hover:border-warm-300 transition-all duration-300">
@@ -78,23 +75,16 @@ export default function ProductCard({ product }: { product: Product }) {
           >
             Detalji
           </Link>
-          {canAddToCart && (
-            <button
-              onClick={() =>
-                addItem({
-                  _id: product._id,
-                  name: product.name,
-                  slug: product.slug,
-                  price: product.price,
-                  salePrice: product.salePrice,
-                  image: product.images?.[0],
-                })
-              }
-              className="flex-1 text-xs py-2 bg-blush text-white rounded-xl hover:bg-blush-700 transition-colors font-medium"
-              aria-label={`Dodaj ${product.name} u korpu`}
+          {product.inStock && (
+            <a
+              href={INSTAGRAM_DM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-xs py-2 bg-blush text-white rounded-xl hover:bg-blush-700 transition-colors font-medium text-center"
+              aria-label={`Poruči ${product.name} na Instagramu`}
             >
-              + Korpa
-            </button>
+              Pošalji upit
+            </a>
           )}
         </div>
       </div>

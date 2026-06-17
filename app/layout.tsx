@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Playfair_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { SITE_NAME, SITE_URL } from '@/lib/constants'
-import { CartProvider } from '@/lib/cart/CartContext'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -38,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="sr" className={`${playfair.variable} ${dmSans.variable}`}>
       <body>
-        <CartProvider>{children}</CartProvider>
+        {children}
       </body>
     </html>
   )

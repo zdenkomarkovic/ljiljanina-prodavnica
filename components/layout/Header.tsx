@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllCategories } from '@/lib/sanity/queries'
-import CartIcon from './CartIcon'
 import CategoryDropdown from './CategoryDropdown'
 import MobileMenu from './MobileMenu'
 
@@ -39,7 +38,6 @@ export default async function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <CartIcon />
           <MobileMenu categories={categories} />
         </div>
       </div>

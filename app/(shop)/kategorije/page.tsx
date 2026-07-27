@@ -2,6 +2,7 @@ import { getAllCategories } from '@/lib/sanity/queries'
 import CategoryList from '@/components/shop/CategoryList'
 
 export const metadata = { title: 'Kategorije' }
+export const revalidate = 60
 
 export default async function KategorijeStrаnica() {
   const categories = await getAllCategories()

@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { getProductBySlug, getRelatedProducts } from '@/lib/sanity/queries'
 import { buildMetadata } from '@/lib/metadata'
 import { SITE_URL } from '@/lib/constants'
+import { urlFor } from '@/lib/sanity/image'
 import ProductGallery from '@/components/shop/ProductGallery'
 import AddToCartButton from '@/components/shop/AddToCartButton'
 import ShareButton from '@/components/shop/ShareButton'
@@ -44,8 +45,62 @@ export default async function ProductPage({ params }: Props) {
 
   const displayPrice = product.salePrice ?? product.price
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.name,
+    image: (product.images ?? []).map((img) => urlFor(img).width(1200).url()),
+    url: `${SITE_URL}/proizvodi/${slug}`,
+    category: product.category?.name,
+    ...(displayPrice != null && {
+      offers: {
+        '@type': 'Offer',
+        url: `${SITE_URL}/proizvodi/${slug}`,
+        priceCurrency: 'RSD',
+        price: displayPrice,
+        availability: product.inStock
+          ? 'https://schema.org/InStock'
+          : 'https://schema.org/OutOfStock',
+      },
+    }),
+  }
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Početna', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Proizvodi', item: `${SITE_URL}/proizvodi` },
+      ...(product.category
+        ? [
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: product.category.name,
+              item: `${SITE_URL}/kategorije/${product.category.slug}`,
+            },
+          ]
+        : []),
+      {
+        '@type': 'ListItem',
+        position: product.category ? 4 : 3,
+        name: product.name,
+        item: `${SITE_URL}/proizvodi/${slug}`,
+      },
+    ],
+  }
+
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link href="/" className="hover:text-black transition-colors">Početna</Link>
         <span>/</span>

@@ -56,7 +56,7 @@ export default function HeroSlider({ slides }: { slides: HeroSlide[] }) {
             className="text-xl md:text-3xl lg:text-4xl text-white/90 font-light tracking-[0.25em] uppercase mt-3"
             style={{ textShadow: '0 2px 16px rgba(0,0,0,0.55)' }}
           >
-            mala prodavnica
+            mala Chogan prodavnica
           </p>
         </div>
       </div>

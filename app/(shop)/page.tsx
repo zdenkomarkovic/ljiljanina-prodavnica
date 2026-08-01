@@ -1,10 +1,19 @@
 import { Suspense } from 'react'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import ProductGrid from '@/components/shop/ProductGrid'
 import CategoryList from '@/components/shop/CategoryList'
 import HeroSlider from '@/components/shop/HeroSlider'
 import Pagination from '@/components/shop/Pagination'
 import { getFeaturedProducts, getAllCategories, getHeroSlides } from '@/lib/sanity/queries'
+import { SITE_URL, SITE_DESCRIPTION } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: SITE_URL,
+  },
+}
 
 const FEATURED_PAGE_SIZE = 8
 

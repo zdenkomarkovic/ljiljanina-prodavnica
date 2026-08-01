@@ -7,8 +7,10 @@ export const SITE_URL =
 export const SITE_NAME =
   process.env.NEXT_PUBLIC_SITE_NAME ?? "My Site";
 
-// Dodaj ostale konstante koje su specifične za projekat
-// export const SITE_DESCRIPTION = "";
-// export const SITE_AUTHOR = "";
-// export const SOCIAL_TWITTER = "";
-// export const SOCIAL_INSTAGRAM = "";
+export const SITE_DESCRIPTION =
+  "Ljiljanina mala Chogan prodavnica – originalna Chogan parfimerija, kozmetika i dodaci ishrani po pristupačnim cenama, sa brzom dostavom širom Srbije.";
+
+export const SOCIAL_INSTAGRAM =
+  "https://www.instagram.com/ljiljanina_chogan.prodavnica";
+
+export const CONTACT_PHONE = "+381646664852";

@@ -20,7 +20,7 @@ export default function OgImage() {
       }}
     >
       <div style={{ fontSize: 80, fontWeight: 700, letterSpacing: '-2px' }}>{SITE_NAME}</div>
-      <div style={{ fontSize: 30, color: '#888', marginTop: 20 }}>Online prodavnica</div>
+      <div style={{ fontSize: 30, color: '#888', marginTop: 20 }}>Chogan parfimerija i kozmetika</div>
     </div>,
     { ...size },
   )

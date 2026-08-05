@@ -2,8 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { urlFor } from '@/lib/sanity/image'
 import type { Product } from '@/types/shop'
-
-const INSTAGRAM_DM_URL = 'https://ig.me/m/ljiljanina_chogan.prodavnica'
+import { SOCIAL_INSTAGRAM_DM_URL } from '@/lib/constants'
 
 export default function ProductCard({ product }: { product: Product }) {
   const image = product.images?.[0]
@@ -77,7 +76,7 @@ export default function ProductCard({ product }: { product: Product }) {
           </Link>
           {product.inStock && (
             <a
-              href={INSTAGRAM_DM_URL}
+              href={SOCIAL_INSTAGRAM_DM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 text-xs py-2 bg-blush text-white rounded-xl hover:bg-blush-700 transition-colors font-medium text-center"

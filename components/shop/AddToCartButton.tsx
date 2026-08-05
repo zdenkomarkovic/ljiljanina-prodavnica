@@ -1,6 +1,5 @@
 import type { Product } from '@/types/shop'
-
-const INSTAGRAM_DM_URL = 'https://ig.me/m/ljiljanina_chogan.prodavnica'
+import { SOCIAL_INSTAGRAM_DM_URL } from '@/lib/constants'
 
 export default function AddToCartButton({ product }: { product: Product }) {
   if (!product.inStock) {
@@ -18,7 +17,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
         <span className="font-semibold text-warm-900">{product.name}</span>
       </p>
       <a
-        href={INSTAGRAM_DM_URL}
+        href={SOCIAL_INSTAGRAM_DM_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="w-full py-3 bg-blush text-white rounded-xl hover:bg-blush-700 transition-colors font-medium text-center flex items-center justify-center gap-2"

@@ -32,6 +32,9 @@ export default async function Header() {
           <Link href="/proizvodi" className="hover:text-blush transition-colors">
             Svi proizvodi
           </Link>
+          <Link href="/o-nama" className="hover:text-blush transition-colors">
+            O nama
+          </Link>
           <a href="#kontakt" className="hover:text-blush transition-colors">
             Kontakt
           </a>

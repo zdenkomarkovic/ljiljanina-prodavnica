@@ -56,6 +56,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { href: '/', label: 'Početna' },
+                { href: '/o-nama', label: 'O nama' },
                 { href: '/kategorije', label: 'Kategorije' },
                 { href: '/proizvodi', label: 'Svi proizvodi' },
                 { href: '/korpa', label: 'Korpa' },

@@ -89,6 +89,9 @@ export default function MobileMenu({ categories }: { categories: Category[] }) {
             <Link href="/proizvodi" onClick={close} className="py-2 hover:text-blush transition-colors">
               Svi proizvodi
             </Link>
+            <Link href="/o-nama" onClick={close} className="py-2 hover:text-blush transition-colors">
+              O nama
+            </Link>
             <a href="#kontakt" onClick={close} className="py-2 hover:text-blush transition-colors">
               Kontakt
             </a>

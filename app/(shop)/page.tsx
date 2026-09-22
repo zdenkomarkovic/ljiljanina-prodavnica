@@ -60,18 +60,6 @@ export default async function HomePage({ searchParams }: Props) {
             <Pagination total={total} pageSize={FEATURED_PAGE_SIZE} />
           </Suspense>
         </section>
-
-        <section className="text-center">
-          <h2 className="text-2xl font-semibold mb-8">Jedna od prezentacija naših proizvoda</h2>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <video
-              src="/video-0c6e6989565f637b6f6fdfcedd6e6713-V.mp4"
-              controls
-              playsInline
-              className="w-full"
-            />
-          </div>
-        </section>
       </main>
     </>
   )

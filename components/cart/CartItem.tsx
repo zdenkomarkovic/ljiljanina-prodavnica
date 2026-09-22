@@ -12,7 +12,7 @@ export default function CartItemRow({ item }: { item: CartItemType }) {
   return (
     <div className="flex gap-4 py-4 border-b border-gray-100">
       <div className="relative w-20 h-20 flex-shrink-0 bg-gray-50 rounded overflow-hidden">
-        {item.image ? (
+        {item.image?.asset ? (
           <Image
             src={urlFor(item.image).width(80).height(80).fit('crop').url()}
             alt={item.name}

@@ -10,7 +10,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
   const { slug } = await params
   const category = await getCategoryBySlug(slug)
 
-  const imageUrl = category?.image
+  const imageUrl = category?.image?.asset
     ? urlFor(category.image).width(1200).height(630).fit('crop').url()
     : null
 

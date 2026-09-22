@@ -59,7 +59,7 @@ export default async function KategorijaPage({ params, searchParams }: Props) {
         <span className="text-gray-600">{category.name}</span>
       </nav>
 
-      {category.image && (
+      {category.image?.asset && (
         <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden mb-8 bg-gray-100">
           <Image
             src={urlFor(category.image).width(1200).height(400).fit('crop').url()}

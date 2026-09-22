@@ -25,7 +25,7 @@ const productFields = `
   salePrice,
   inStock,
   featured,
-  "images": images[] { asset, alt },
+  "images": images[defined(asset)] { asset, alt },
   "category": category->{ name, "slug": slug.current }
 `
 

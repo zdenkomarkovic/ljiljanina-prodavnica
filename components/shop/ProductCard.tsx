@@ -12,7 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group border border-warm-200 rounded-2xl overflow-hidden flex flex-col bg-white hover:shadow-md hover:border-warm-300 transition-all duration-300">
       <Link href={`/proizvodi/${product.slug}`} className="block aspect-square relative bg-warm-50">
-        {image ? (
+        {image?.asset ? (
           <Image
             src={urlFor(image).width(400).height(400).fit('crop').url()}
             alt={image.alt ?? product.name}

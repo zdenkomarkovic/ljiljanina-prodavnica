@@ -38,7 +38,7 @@ export default function CategoryList({
           href={`/kategorije/${cat.slug}`}
           className="group border border-warm-200 rounded-2xl overflow-hidden hover:border-warm-300 hover:shadow-md bg-white transition-all duration-300"
         >
-          {cat.image ? (
+          {cat.image?.asset ? (
             <div className="aspect-video relative bg-warm-50">
               <Image
                 src={urlFor(cat.image).width(400).height(225).fit('crop').url()}
